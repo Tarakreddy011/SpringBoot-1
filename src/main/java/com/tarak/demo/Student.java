@@ -30,6 +30,10 @@ public class Student {
         this.age = age;
     }
 
+    /*
+    getter and setter or used  for encapsulation
+     */
+
     void display(){
         //System.out.println(this.name);
         System.out.println(getName());
