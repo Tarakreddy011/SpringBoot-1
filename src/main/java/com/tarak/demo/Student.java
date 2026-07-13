@@ -1,5 +1,8 @@
 package com.tarak.demo;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Student {
     private String name;
     private int age;
@@ -30,8 +33,9 @@ public class Student {
         this.age = age;
     }
 
-    /*
-    getter and setter or used  for encapsulation
+    /**
+     * this is new comment
+
      */
 
     void display(){
