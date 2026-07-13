@@ -8,12 +8,6 @@ import org.springframework.stereotype.Component;
 public class PaymentService {
 
 
-    /**
-     * this is feild injection
-     */
-    //PaymentService paymentService = new PaymentService();
-
-
     public void payment() {
         System.out.println("PaymentService payment done !!!!!11");
     }
