@@ -39,4 +39,16 @@ public class serverportfolio {
                 </ul>
                 """;
     }
+
+    @GetMapping("/portfolio/project")
+    public String myproject() {
+        return """
+                <h1>My Projects</h1>
+                <ul>
+                    <li>Java full stack</li>
+                
+                    <li>Andriod application</li>
+                </ul>
+                """;
+    }
 }

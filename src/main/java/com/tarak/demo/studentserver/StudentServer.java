@@ -1,23 +1,30 @@
-//package com.tarak.demo.studentserver;
-//
-//
-//import jakarta.persistence.Entity;
-//import jakarta.persistence.Id;
-//import jdk.jfr.Enabled;
-//import org.springframework.web.bind.annotation.RestController;
-//
-///**
-// *  1. Store data into databse  |
-// *  2. get The stored information
-// */
-//
-//
-//@Entity
-//
-//public class StudentServer {
-//
-//    @Id
-//    long id;
-//    String name;
-//    String department;
-//}
+package com.tarak.demo.studentserver;
+
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+/**
+ * 1 . create the student
+ * 2 . Read the student
+ * 3 . Update the server
+ * 4 . Delete the server
+ */
+
+@RestController
+public class StudentServer {
+
+
+    // create the student
+    @PostMapping("/addstudent")
+    public String storeStudent(){
+        return """
+                Id : 001,
+                Name: Tarak,
+                Depertment: CSE,
+                age: 20
+                """;
+    }
+
+    // Read the student data
+
+}
