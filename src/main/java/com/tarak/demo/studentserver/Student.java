@@ -12,8 +12,8 @@ public class Student {
 
     int id;
     int age;
-    String Name;
-    String Depertment;
+    String name;
+    String depertment;
 
 
     public int getAge() {
@@ -25,19 +25,19 @@ public class Student {
     }
 
     public String getName() {
-        return Name;
+        return name;
     }
 
     public void setName(String name) {
-        Name = name;
+        this.name = name;
     }
 
     public String getDepertment() {
-        return Depertment;
+        return depertment;
     }
 
     public void setDepertment(String depertment) {
-        Depertment = depertment;
+        this.depertment = depertment;
     }
 
 

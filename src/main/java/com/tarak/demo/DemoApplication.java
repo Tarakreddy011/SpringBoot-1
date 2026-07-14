@@ -12,6 +12,7 @@
 
 //			Student student = context.getBean(Student.class);
 //			student.setName("Tarak");
+
 //	//		student.setAge(20);
 //	//		student.display();
 //

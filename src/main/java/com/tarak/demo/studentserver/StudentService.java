@@ -20,11 +20,9 @@ public class StudentService {
         String name = student.getName();
         String department = student.getDepertment();
 
-        if (age < 18) {
+        if (age < 18 && name == null && department == null ) {
             return null;
         }
-
-
         studentRepository.save(student);
         return student;
     }
