@@ -13,22 +13,22 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class StudentServer {
-
-
-    // create the student
-    @PostMapping("/addstudent")
-    public String storeStudent(@RequestBody Student student) { // it convert json to class to stote in class
-
-        int id = student.getid();
-        int age = student.getAge();
-        String name = student.getName();
-        String depertment = student.getDepertment();
-        return "id : " + id +
-                ", name : " + name +
-                ", age : " + age +
-                ", deperment : " + depertment;
-    }
-
-    // Read the student data
+//
+//
+//    // create the student
+//    @PostMapping("/addstudent")
+//    public String storeStudent(@RequestBody Student student) { // it convert json to class to stote in class
+//
+//        int id = student.getid();
+//        int age = student.getAge();
+//        String name = student.getName();
+//        String depertment = student.getDepertment();
+//        return "id : " + id +
+//                ", name : " + name +
+//                ", age : " + age +
+//                ", deperment : " + depertment;
+//    }
+//
+//    // Read the student data
 
 }
