@@ -1,6 +1,18 @@
 package com.tarak.demo.studentserver;
 
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+@Entity
 public class Student {
+
+
+    @Id
+    int id;
+    int age;
+    String name;
+    String depertment;
 
     public int getid() {
         return id;
@@ -9,12 +21,6 @@ public class Student {
     public void setid(int id) {
         id = id;
     }
-
-    int id;
-    int age;
-    String name;
-    String depertment;
-
 
     public int getAge() {
         return age;

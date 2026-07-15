@@ -17,13 +17,13 @@ public class StudentServer {
 //
 //    // create the student
 //    @PostMapping("/addstudent")
-//    public String storeStudent(@RequestBody Student student) { // it convert json to class to stote in class
+//    public String storeStudent(@RequestBody Studentex student) { // it convert json to class to stote in class
 //
-//        int id = student.getid();
+//        int Id = student.getid();
 //        int age = student.getAge();
 //        String name = student.getName();
 //        String depertment = student.getDepertment();
-//        return "id : " + id +
+//        return "Id : " + Id +
 //                ", name : " + name +
 //                ", age : " + age +
 //                ", deperment : " + depertment;

@@ -3,15 +3,15 @@ package com.tarak.demo;
 import org.springframework.stereotype.Component;
 
 @Component
-public class Student {
+public class Studentex {
     private String name;
     private int age;
 
-    public Student() {
+    public Studentex() {
 
     }
 
-    public Student(String name, int age) {
+    public Studentex(String name, int age) {
         this.name = name;
         this.age = age;
     }

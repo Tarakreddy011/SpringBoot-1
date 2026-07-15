@@ -10,7 +10,7 @@
 			//SpringApplication.run(DemoApplication.class, args);
 			ApplicationContext context = SpringApplication.run(DemoApplication.class, args);
 
-//			Student student = context.getBean(Student.class);
+//			Studentex student = context.getBean(Studentex.class);
 //			student.setName("Tarak");
 
 //	//		student.setAge(20);
