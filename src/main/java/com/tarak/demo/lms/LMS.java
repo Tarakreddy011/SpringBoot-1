@@ -1,8 +1,14 @@
 package com.tarak.demo.lms;
 
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+
+@Entity
 public class LMS {
 
+    @Id
     int id;
     String bookname;
     String author;

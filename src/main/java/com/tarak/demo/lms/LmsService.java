@@ -22,7 +22,7 @@ public class LmsService {
         if (id < 1 && bookname == null && author== null ) {
             return null;
         }
-        lmsrepo.savelmas(lms);
+        lmsrepo.save(lms);
         return lms;
     }
 }

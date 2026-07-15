@@ -29,13 +29,4 @@ public class StudentController {
         return ResponseEntity.status(201).body(result);
     }
 
-    @GetMapping("/getstudent")
-    public List<Student> getStudents() {
-        Student result = studentService.StudentValidate(null);
-
-        if (result == null) {
-            return Collections.emptyList();
-        }
-        return studentService.getAllStudents();
-    }
 }

@@ -17,19 +17,16 @@ public class StudentService {
     }
 
     public Student StudentValidate(Student student) {
-        int id = student.getid();
+//        int id = student.getid();
         int age = student.getAge();
         String name = student.getName();
         String department = student.getDepertment();
 
-        if (age < 18 && name == null && department == null ) {
+        if (age < 18 || name == null || department == null ) {
             return null;
         }
         studentRepository.save(student);
         return student;
     }
 
-    public List<Student> getAllStudents() {
-        return studentRepository.findAll();
-    }
 }

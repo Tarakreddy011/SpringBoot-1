@@ -2,14 +2,17 @@ package com.tarak.demo.studentserver;
 
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+
 
 @Entity
 public class Student {
 
-
     @Id
-    int id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
     int age;
     String name;
     String depertment;
@@ -19,9 +22,8 @@ public class Student {
     }
 
     public void setid(int id) {
-        id = id;
+        this.id = id;
     }
-
     public int getAge() {
         return age;
     }
