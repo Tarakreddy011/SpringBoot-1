@@ -18,15 +18,10 @@
     @Repository
     public interface StudentRepository extends JpaRepository<Student, Integer> {
 
-
-
-    //    public Studentex save(Studentex student) {
+        //    public Studentex save(Studentex student) {
     //        System.out.println("StudentRepository save");
     //        return student;
     //    }
-
-
-
 
 
     }
