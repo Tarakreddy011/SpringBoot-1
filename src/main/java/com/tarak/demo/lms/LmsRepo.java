@@ -1,6 +1,5 @@
 package com.tarak.demo.lms;
 
-import com.tarak.demo.studentserver.Student;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

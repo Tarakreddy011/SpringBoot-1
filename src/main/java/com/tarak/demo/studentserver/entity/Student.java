@@ -1,4 +1,4 @@
-package com.tarak.demo.studentserver;
+package com.tarak.demo.studentserver.entity;
 
 
 import jakarta.persistence.Entity;
@@ -12,7 +12,7 @@ public class Student {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    Integer id;
     int age;
     String name;
     String depertment;

@@ -1,15 +1,14 @@
-package com.tarak.demo.studentserver;
+package com.tarak.demo.studentserver.service;
 
+import com.tarak.demo.studentserver.entity.Student;
+import com.tarak.demo.studentserver.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @Service
 public class StudentService {
 
     StudentRepository studentRepository;
-
 
     @Autowired
     public StudentService(StudentRepository studentRepository) {
@@ -17,7 +16,7 @@ public class StudentService {
     }
 
     public Student StudentValidate(Student student) {
-//        int id = student.getid();
+         //int id = student.getid();
         int age = student.getAge();
         String name = student.getName();
         String department = student.getDepertment();
@@ -29,4 +28,7 @@ public class StudentService {
         return student;
     }
 
+    public Student getStudentById(int id) {
+        return studentRepository.findById(id).orElse(null);
+    }
 }
