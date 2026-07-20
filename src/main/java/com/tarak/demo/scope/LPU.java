@@ -1,5 +1,9 @@
 package com.tarak.demo.scope;
 
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Positive;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
@@ -7,10 +11,13 @@ import org.springframework.stereotype.Component;
 @Scope("prototype")
 public class LPU {
 
-    /**
-     * singleton is egar so we get
-     * prototype is lazy so obj is not created
-     */
+    @NotNull
+    @Positive
+    private String name;
+    @NotBlank
+    private int age;
+    @Email
+    private String Email;
 
     LPU() {
         System.out.println("Lpu rank NAC A+++++");
