@@ -46,7 +46,7 @@ public class StudentService {
      * Update student method
      *
      * @param id
-     * @param student
+     * @param updateStudentRequestDTO
      * @return
      */
 
@@ -57,7 +57,7 @@ public class StudentService {
             return null; // student not found
         }
 
-        // Only update the fields from DTO
+        // name and age only update no other update
         result.setName(updateStudentRequestDTO.getName());
         result.setAge(updateStudentRequestDTO.getAge());
 
@@ -111,5 +111,6 @@ public class StudentService {
         return createStudentResponseDTO;
 
     }
+
 
 }

@@ -22,6 +22,5 @@
 //			Bakery bakery = context.getBean(Bakery.class);
 //			bakery.bakeryslip();\\
 
-
 		}
 	}

@@ -58,6 +58,7 @@ public class StudentController {
 
     /**
      * put mapping
+     *
      * @param id
      * @return
      */
@@ -71,7 +72,7 @@ public class StudentController {
             return ResponseEntity.status(400).body("Invalid input or student not found");
         }
 
-        // Return only name and age via Response DTO
+        // return name and age no other return
         UpdateStudentResponseDTO responseDTO = new UpdateStudentResponseDTO(updatedStudent);
         return ResponseEntity.ok(responseDTO);
     }
