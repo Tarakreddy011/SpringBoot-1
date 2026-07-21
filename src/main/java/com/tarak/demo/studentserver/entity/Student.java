@@ -1,13 +1,8 @@
 package com.tarak.demo.studentserver.entity;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Positive;
+import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -26,6 +21,20 @@ public class Student {
     private LocalDateTime createdAt;
 
     private LocalDateTime updatedAt;
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    @Column(unique = true, nullable = false)
+    private String email;
+
+
+
 
     public LocalDateTime getCreatedAt() {
         return createdAt;

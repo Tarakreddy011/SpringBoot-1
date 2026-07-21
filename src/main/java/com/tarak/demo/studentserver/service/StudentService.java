@@ -17,24 +17,30 @@ public class StudentService {
     StudentRepository studentRepository;
 
 
-
     @Autowired
     public StudentService(StudentRepository studentRepository) {
         this.studentRepository = studentRepository;
     }
 
 
-
     public CreateStudentResponseDTO studentValidate(CreateStudentRequestDTO createStudentRequestDTO) {
 
         Student student = mapToStudent(createStudentRequestDTO);
+
+
+        if (studentRepository.existsByEmail(student.getEmail())) {
+            throw new IllegalArgumentException("Email is already taken");
+        }
+
         studentRepository.save(student);
         return mapToResponseDTO(student);
     }
 
 
+
     /**
      * get student by ID
+     *
      * @param id
      * @return
      */
@@ -70,17 +76,16 @@ public class StudentService {
     }
 
 
-
-
     /**
      * Delete student
+     *
      * @param id
      * @return
      */
 
     public Student deleteStudent(int id) {
         Student result = studentRepository.findById(id).orElse(null);
-        if(result == null) {
+        if (result == null) {
             return null;
         }
         studentRepository.delete(result);
@@ -100,6 +105,7 @@ public class StudentService {
         student.setName(createStudentRequestDTO.getName());
         student.setAge(createStudentRequestDTO.getAge());
         student.setDepartment(createStudentRequestDTO.getDepartment());
+        student.setEmail(createStudentRequestDTO.getEmail());
         student.setCreatedAt(LocalDateTime.now());
         student.setUpdatedAt(LocalDateTime.now());
 
@@ -111,6 +117,8 @@ public class StudentService {
         createStudentResponseDTO.setId(student.getId());
         createStudentResponseDTO.setName(student.getName());
         createStudentResponseDTO.setAge(student.getAge());
+        createStudentResponseDTO.setEmail(student.getEmail());
+        createStudentResponseDTO.setDepartment(student.getDepartment());
         createStudentResponseDTO.setDepartment(student.getDepartment());
 
         return createStudentResponseDTO;
