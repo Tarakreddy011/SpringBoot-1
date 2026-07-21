@@ -3,10 +3,13 @@ package com.tarak.demo.store;
 
 
 public class CreateStoreRequestDTO {
+    public String getStorename;
     private String name;
     private int age;
     private String email;
     private int phone;
+    private String catagery;
+
 
     // Generate Getters and Setters for all fields
     public String getName() { return name; }
@@ -17,4 +20,12 @@ public class CreateStoreRequestDTO {
     public void setEmail(String email) { this.email = email; }
     public int getPhone() { return phone; }
     public void setPhone(int phone) { this.phone = phone; }
+
+    public String getCatagery() {
+        return catagery;
+    }
+
+    public void setCatagery(String catagery) {
+        this.catagery = catagery;
+    }
 }

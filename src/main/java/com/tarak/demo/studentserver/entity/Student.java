@@ -16,21 +16,15 @@ import java.time.LocalDateTime;
 public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @NotNull
-    @Positive
     private int id;
-    @NotNull
-    @NotBlank(message = "name can't be blank")
+
     private String name;
-    @NotNull
-    @Positive(message = "age can't be negative")
-    @NotBlank(message = "age can't be blank")
     private int age;
-    @NotNull
+
     private String department;
-    @NotNull
+
     private LocalDateTime createdAt;
-    @NotNull
+
     private LocalDateTime updatedAt;
 
     public LocalDateTime getCreatedAt() {

@@ -24,6 +24,12 @@ public class Store {
     String Email;
     @Positive
     int Phone;
+    String catagery;
+
+
+    public String getCatagery() {return catagery;}
+
+    public void setCatagery(String catagery) {this.catagery = catagery;}
 
     public int getId() {
         return id;

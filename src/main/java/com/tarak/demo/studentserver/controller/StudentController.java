@@ -24,6 +24,7 @@ public class StudentController {
 
     /**
      * post maping
+     *
      * @param createStudentRequestDTO
      * @return
      */
@@ -31,26 +32,28 @@ public class StudentController {
     public ResponseEntity<?> storeStudent(@RequestBody CreateStudentRequestDTO createStudentRequestDTO) {
         CreateStudentResponseDTO result = studentService.studentValidate(createStudentRequestDTO);
 
-        if(result == null)
-        {
-            return ResponseEntity.status(400).body("Invalid input");
+        if (result == null) {
+            return ResponseEntity.status(400).body("one of the entru is wrong ");
         }
-        return  ResponseEntity.status(201).body(result);
+
+        //if(result.)
+        return ResponseEntity.status(201).body(result);
     }
 
     /**
      * get mapping
+     *
      * @param id
      * @return
      */
     @GetMapping("/getStudent/{id}")
-    public ResponseEntity<?> getStudentById(@PathVariable int id){
+    public ResponseEntity<?> getStudentById(@PathVariable int id) throws Exception {
 
         Student student = studentService.getStudentById(id);
 
-        if(student == null){
-            return ResponseEntity.status(404).body("Student not found");
-        }
+//        if (student == null) {
+//            return ResponseEntity.status(404).body("Student not found");
+//        }
 
         return ResponseEntity.ok(student);
     }
@@ -78,17 +81,17 @@ public class StudentController {
     }
 
 
-
     /**
      * deletyr mapping
+     *
      * @param id
      * @return
      */
 
     @DeleteMapping("/deleteStudent/{id}")
-    public ResponseEntity<?> deleteStudent(@PathVariable int id){
+    public ResponseEntity<?> deleteStudent(@PathVariable int id) {
         Student student = studentService.deleteStudent(id);
-        if(student == null) {
+        if (student == null) {
             return ResponseEntity.status(400).body("Invalid input");
         }
         return ResponseEntity.status(200).body("Student deleted");
