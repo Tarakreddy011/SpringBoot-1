@@ -3,8 +3,6 @@ package com.tarak.demo.studentserver.entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
-
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Entity
@@ -25,7 +23,11 @@ public class Student {
     @Email
     private String email;
 
-
+    /**
+     * tara.com
+     * tark@.com
+     * @return
+     */
 
     public String getEmail() {
         return email;

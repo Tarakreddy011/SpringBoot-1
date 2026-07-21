@@ -21,6 +21,7 @@
     public interface StudentRepository extends JpaRepository<Student, Integer> {
 
         boolean existsByEmail(String email);
+        boolean existsByName(String name);
 //        Optional<Student> findByEmail(String email);
         //    public Studentex save(Studentex student) {
     //        System.out.println("StudentRepository save");

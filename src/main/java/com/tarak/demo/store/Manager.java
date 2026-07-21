@@ -12,11 +12,11 @@ public class Manager {
     @Id
     @GeneratedValue
     int id;
-    @NotNull
+
     String name;
-    @NotNull
+
     String managerstorename;
-    @NotNull
+
     int age;
 
     public int getId() {

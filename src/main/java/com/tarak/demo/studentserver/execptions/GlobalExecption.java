@@ -9,12 +9,15 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import java.time.LocalDateTime;
-import java.util.HashMap;
-import java.util.Map;
+
 
 /**
  * @Restcontroller advice for handling execption in controller--
  * @RuntimeException.class this handeles the runtime exections
+ *
+ * 500 - 509 server errors  --!jvm no rout cooret
+ * create global
+ *
  */
 
 @RestControllerAdvice

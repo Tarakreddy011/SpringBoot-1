@@ -35,6 +35,12 @@ public class StudentService {
                     student.getEmail());
         }
 
+        if (studentRepository.existsByName(student.getName())) {
+            throw new IllegalArgumentException("Name is already taken, try again " +
+                    student.getName());
+        }
+
+
         /*if (studentRepository.existsByEmail(student.getEmail())) {
             throw new ResponseStatusException(HttpStatus.CONFLICT, "Email is already taken");
         }*/
@@ -111,9 +117,20 @@ public class StudentService {
         Student student = new Student();
 
         student.setName(createStudentRequestDTO.getName());
+
+        if(createStudentRequestDTO.getName() == null) {
+            throw new IllegalArgumentException("Name is required");
+        }
         student.setAge(createStudentRequestDTO.getAge());
+        if(createStudentRequestDTO.getAge() <= 0) {
+            throw new IllegalArgumentException("Email is required");
+        }
         student.setDepartment(createStudentRequestDTO.getDepartment());
+        if (createStudentRequestDTO.getDepartment() == null) {
+            throw new IllegalArgumentException("Department is required");
+        }
         student.setEmail(createStudentRequestDTO.getEmail());
+
         student.setCreatedAt(LocalDateTime.now());
         student.setUpdatedAt(LocalDateTime.now());
 
