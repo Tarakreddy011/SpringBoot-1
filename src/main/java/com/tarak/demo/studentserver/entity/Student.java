@@ -22,6 +22,11 @@ public class Student {
 
     private LocalDateTime updatedAt;
 
+    @Email
+    private String email;
+
+
+
     public String getEmail() {
         return email;
     }
@@ -29,12 +34,6 @@ public class Student {
     public void setEmail(String email) {
         this.email = email;
     }
-
-    @Email
-    private String email;
-
-
-
 
     public LocalDateTime getCreatedAt() {
         return createdAt;

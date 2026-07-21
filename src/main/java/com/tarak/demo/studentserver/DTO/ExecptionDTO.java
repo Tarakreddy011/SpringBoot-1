@@ -2,14 +2,7 @@ package com.tarak.demo.studentserver.DTO;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-
 import java.time.LocalDateTime;
-
-/**
- * @Data is used
- * @AllArgsConstructor  is used to make getter and setter methods with constructors
- *
- */
 
 @Data
 @AllArgsConstructor
@@ -21,7 +14,12 @@ public class ExecptionDTO {
     private String error;
     private String path;
 
-
-    public ExecptionDTO(LocalDateTime now, int value, String reasonPhrase, String message, String requestURI) {
+    // Custom constructor for convenience
+    public ExecptionDTO(LocalDateTime timestamp, int statuscode, String error, String message, String path) {
+        this.timestamp = timestamp;
+        this.statuscode = statuscode;
+        this.error = error;
+        this.message = message;
+        this.path = path;
     }
 }

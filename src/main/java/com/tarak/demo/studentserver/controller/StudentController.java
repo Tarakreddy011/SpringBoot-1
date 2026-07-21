@@ -26,7 +26,7 @@ public class StudentController {
      * post maping
      *
      * @param createStudentRequestDTO
-     * @return
+     * @return ResponseEntity
      */
     @PostMapping("/create")
     public ResponseEntity<?> storeStudent(@RequestBody CreateStudentRequestDTO createStudentRequestDTO) {
@@ -44,7 +44,7 @@ public class StudentController {
      * get mapping
      *
      * @param id
-     * @return
+     * @return ResponseEntity<?>
      */
     @GetMapping("/getStudent/{id}")
     public ResponseEntity<?> getStudentById(@PathVariable int id) throws Exception {
