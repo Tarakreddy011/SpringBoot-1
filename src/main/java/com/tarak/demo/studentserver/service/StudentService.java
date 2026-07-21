@@ -6,7 +6,9 @@ import com.tarak.demo.studentserver.DTO.UpdateStudentRequestDTO;
 import com.tarak.demo.studentserver.entity.Student;
 import com.tarak.demo.studentserver.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.time.LocalDateTime;
 import java.util.Optional;
@@ -29,8 +31,14 @@ public class StudentService {
 
 
         if (studentRepository.existsByEmail(student.getEmail())) {
-            throw new IllegalArgumentException("Email is already taken");
+            throw new IllegalArgumentException("Email is already taken, try again " +
+                    student.getEmail());
         }
+
+        /*if (studentRepository.existsByEmail(student.getEmail())) {
+            throw new ResponseStatusException(HttpStatus.CONFLICT, "Email is already taken");
+        }*/
+
 
         studentRepository.save(student);
         return mapToResponseDTO(student);

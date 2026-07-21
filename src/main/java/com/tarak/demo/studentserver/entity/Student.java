@@ -30,7 +30,7 @@ public class Student {
         this.email = email;
     }
 
-    @Column(unique = true, nullable = false)
+    @Email
     private String email;
 
 
